@@ -9,11 +9,16 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
+import Logo from "../assets/logo/logoT.png";
+
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Inicio", href: "#", current: true },
+  { name: "Nosotros", href: "#", current: false },
+  { name: "Servicios", href: "#", current: false },
+  { name: "Soluciones", href: "#", current: false },
+  { name: "Clientes", href: "#", current: false },
+  { name: "Noticias", href: "#", current: false },
+  { name: "Contáctanos", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -42,11 +47,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <img
-                alt="Your Company"
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                className="h-8 w-auto"
-              />
+              <img alt="Your Company" src={Logo} className="h-8 w-auto" />
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
