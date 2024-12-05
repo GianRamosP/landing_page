@@ -4,7 +4,7 @@ import Logo from "../assets/logo/logoT.png"; // Asegúrate de que la ruta sea co
 const Clients = () => {
   return (
     <div className="bg-gray-100 font-sans">
-      <section className="container mx-auto my-12 px-6">
+      <section className="container mx-auto  px-6">
         <div className="mb-12">
           <h3 className="text-2xl font-bold text-center text-green-700 mb-6">
             Sector Público
