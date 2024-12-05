@@ -1,15 +1,9 @@
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import Section from "./components/Section";
+// src/App.jsx
+import React from "react";
+import AppRoutes from "./routes";
 
-export default function App() {
-  return (
-    <>
-      <Navbar />
-      <Home />
-      <Section />
-      <Footer />
-    </>
-  );
-}
+const App = () => {
+  return <AppRoutes />;
+};
+
+export default App;
