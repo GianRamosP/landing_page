@@ -12,12 +12,14 @@ const Card = ({ icon, title, description, delay }) => {
         animationDelay: delay,
       }}
     >
-      <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
-        <div className="inline-block text-gray-900 mb-4">{icon}</div>
-        <h3 className="text-lg leading-normal mb-2 font-semibold text-black">
+      <div className="py-8 px-12 mb-12 bg-white border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2 dark:bg-gray-800 dark:border-gray-700">
+        <div className="inline-block text-gray-900 mb-4 dark:text-white">
+          {icon}
+        </div>
+        <h3 className="text-lg leading-normal mb-2 font-semibold text-black dark:text-white">
           {title}
         </h3>
-        <p className="text-gray-500">{description}</p>
+        <p className="text-gray-500 dark:text-gray-400">{description}</p>
       </div>
     </div>
   );

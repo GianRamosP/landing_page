@@ -1,12 +1,13 @@
+import { useState, useEffect } from "react";
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, useLocation } from "react-router-dom"; // Importa Link y useLocation
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo/logoT.png";
+import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Inicio", href: "/" },
@@ -23,9 +24,22 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const location = useLocation();
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-800 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -51,25 +65,37 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    aria-current={
-                      location.pathname === item.href ? "page" : undefined
-                    }
-                    className={classNames(
-                      location.pathname === item.href
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "rounded-md px-3 py-2 text-sm font-medium"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+              {navigation.map((item) => (
+  <Link
+    key={item.name}
+    to={item.href}
+    aria-current={location.pathname === item.href ? "page" : undefined}
+    className={classNames(
+      location.pathname === item.href
+        ? "bg-gray-900 text-white"
+        : "text-gray-300 hover:bg-gray-700 hover:text-white dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white",
+      "rounded-md px-3 py-2 text-sm font-medium",
+      location.pathname === item.href && "dark:bg-gray-700"
+    )}
+  >
+    {item.name}
+  </Link>
+))}
+
               </div>
             </div>
+          </div>
+          <div className="flex items-center">
+            <button
+              onClick={toggleDarkMode}
+              className="ml-4 p-2 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            >
+              {darkMode ? (
+                <MoonIcon className="w-6 h-6 text-gray-400 dark:text-white" />
+              ) : (
+                <SunIcon className="w-6 h-6 text-gray-400 dark:text-white" />
+              )}
+            </button>
           </div>
         </div>
       </div>
@@ -80,13 +106,11 @@ export default function Navbar() {
             <Link
               key={item.name}
               to={item.href}
-              aria-current={
-                location.pathname === item.href ? "page" : undefined
-              }
+              aria-current={location.pathname === item.href ? "page" : undefined}
               className={classNames(
                 location.pathname === item.href
                   ? "bg-gray-900 text-white"
-                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white",
                 "block rounded-md px-3 py-2 text-base font-medium"
               )}
             >

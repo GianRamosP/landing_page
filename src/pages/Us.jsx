@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Logo from "../assets/logo/logoT.png";
+import transition from "../transition.jsx";
 
 const Us = () => {
   useEffect(() => {
@@ -20,9 +21,9 @@ const Us = () => {
     const interval = setInterval(nextSlide, 5000);
     showSlide(currentSlide);
 
-    // Cleanup interval on component unmount
+    
     return () => clearInterval(interval);
-  }, []); // Empty dependency array ensures this runs once on mount
+  }, []); 
 
   return (
     <div className="bg-gray-50">
@@ -126,4 +127,4 @@ const Us = () => {
   );
 };
 
-export default Us;
+export default transition(Us)

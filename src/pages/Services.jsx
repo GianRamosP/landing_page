@@ -1,15 +1,16 @@
 import React from "react";
 import Card from "../components/Card";
+import transition from "../transition.jsx";
 
 const Services = () => {
   return (
     <div
       id="services"
-      className="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white"
+      className="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white dark:bg-gray-900"
     >
       <div className="container xl:max-w-6xl mx-auto px-4">
         <header className="text-center mx-auto mb-12 lg:px-20">
-          <h2 className="text-2xl leading-normal mb-2 font-bold text-black">
+          <h2 className="text-3xl lg:text-4xl leading-normal mb-4 font-extrabold text-black dark:text-white">
             What We Do
           </h2>
           <svg
@@ -26,7 +27,7 @@ const Services = () => {
               cx="50.1"
               cy="30.4"
               r="5"
-              className="stroke-primary"
+              className="stroke-primary dark:stroke-white"
               style={{
                 fill: "transparent",
                 strokeWidth: "2",
@@ -38,7 +39,7 @@ const Services = () => {
               y1="30.4"
               x2="100"
               y2="30.4"
-              className="stroke-primary"
+              className="stroke-primary dark:stroke-white"
               style={{ strokeWidth: "2", strokeMiterlimit: "10" }}
             ></line>
             <line
@@ -46,11 +47,11 @@ const Services = () => {
               y1="30.4"
               x2="0"
               y2="30.4"
-              className="stroke-primary"
+              className="stroke-primary dark:stroke-white"
               style={{ strokeWidth: "2", strokeMiterlimit: "10" }}
             ></line>
           </svg>
-          <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">
+          <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2 dark:text-gray-400">
             Save time managing advertising &amp; Content for your business.
           </p>
         </header>
@@ -142,7 +143,6 @@ const Services = () => {
             description="Maximize your ROI by optimizing conversion paths and refining user experiences."
             delay="0.4s"
           />
-
           <Card
             icon={
               <svg
@@ -167,4 +167,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default transition(Services);

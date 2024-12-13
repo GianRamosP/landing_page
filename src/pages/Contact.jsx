@@ -1,12 +1,54 @@
 import React from "react";
+import transition from "../transition.jsx";
 
-export default function Contacts() {
+function Contact() {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
           Contact Us
         </h2>
+        
+        {/* Línea decorativa similar a la de "What We Do" */}
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 100 60"
+          style={{ margin: "0 auto", height: "35px" }}
+          xmlSpace="preserve"
+        >
+          <circle
+            cx="50.1"
+            cy="30.4"
+            r="5"
+            className="stroke-primary dark:stroke-white"
+            style={{
+              fill: "transparent",
+              strokeWidth: "2",
+              strokeMiterlimit: "10",
+            }}
+          ></circle>
+          <line
+            x1="55.1"
+            y1="30.4"
+            x2="100"
+            y2="30.4"
+            className="stroke-primary dark:stroke-white"
+            style={{ strokeWidth: "2", strokeMiterlimit: "10" }}
+          ></line>
+          <line
+            x1="45.1"
+            y1="30.4"
+            x2="0"
+            y2="30.4"
+            className="stroke-primary dark:stroke-white"
+            style={{ strokeWidth: "2", strokeMiterlimit: "10" }}
+          ></line>
+        </svg>
+
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
           Got a technical issue? Want to send feedback about a beta feature?
           Need details about our Business plan? Let us know.
@@ -67,3 +109,5 @@ export default function Contacts() {
     </section>
   );
 }
+
+export default transition(Contact);
