@@ -17,7 +17,9 @@ export default {
           800: "#1e40af",
           900: "#1e3a8a",
           950: "#172554",
+          
         },
+        custom: "#4d5382", // Oscuro
       },
       fontFamily: {
         body: [
