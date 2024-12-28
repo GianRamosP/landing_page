@@ -69,7 +69,7 @@ const Us = () => {
             nuestra filosofía de compromiso total y esfuerzo constante, hemos
             ganado la confianza y aceptación de nuestros clientes.
           </p>
-          <div className="mt-8 flex justify-center">
+          {/* <div className="mt-8 flex justify-center">
             <video
               controls
               className="rounded-lg shadow-lg max-w-full"
@@ -78,7 +78,20 @@ const Us = () => {
               <source src="ruta-a-tu-video.mp4" type="video/mp4" />
               Tu navegador no soporta el elemento de video.
             </video>
-          </div>
+          </div> */}
+          <div className="mt-8 flex justify-center">
+          <iframe
+            className="rounded-lg shadow-lg max-w-full"
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/PnCC01A_NG4?si=d0eXNjil9mzYaCn_"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+
         </div>
       </section>
 
